@@ -12,7 +12,7 @@ public class SQLServerDBConnector {
 	private final String username = "Vix";
 	private final String password = "12345";
 
-	public Connection getConnection() {
+	public Connection getDBConnection() {
 		Connection conn = null;
 
 		try {
@@ -44,7 +44,7 @@ public class SQLServerDBConnector {
 	// test run: right click -> Run as -> Java application
 	public static void main(String[] args) {
 		try {
-			Connection conn = new SQLServerDBConnector().getConnection();
+			Connection conn = new SQLServerDBConnector().getDBConnection();
 			if (conn != null) {
 				System.out.println("Connection established successfully!");
 			} else {
