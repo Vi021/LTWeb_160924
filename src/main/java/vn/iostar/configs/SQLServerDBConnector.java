@@ -12,31 +12,29 @@ public class SQLServerDBConnector {
 	private final String username = "Vix";
 	private final String password = "12345";
 
-	public Connection getDBConnection() {
+	public Connection getDBConnection() throws Exception {
 		Connection conn = null;
 
-		try {
-			String connStr = "jdbc:sqlserver://" + serverName + ":" + portnumber  + ";databaseName=" + dbName + ";encrypt=true;trustServerCertificate=true";
-			
-			if (!instance.isEmpty()) {
-				connStr += ";instanceName=" + instance;
-			}
-			
-			// Get the connection
-			conn = DriverManager.getConnection(connStr, username, password);
+		String connStr = "jdbc:sqlserver://" + serverName + ":" + portnumber + ";databaseName=" + dbName
+				+ ";encrypt=true;trustServerCertificate=true";
 
-			// Check if connection is successful
-			if (conn != null) {
+		if (!instance.isEmpty()) {
+			connStr += ";instanceName=" + instance;
+		}
+
+		// Get the connection
+		conn = DriverManager.getConnection(connStr, username, password);
+
+		// Check if connection is successful
+		if (conn != null) {
 //				DatabaseMetaData dm = (DatabaseMetaData) conn.getMetaData();
 //				System.out.println("[[ Driver name: " + dm.getDriverName());
 //				System.out.println("Driver version: " + dm.getDriverVersion());
 //				System.out.println("Product name: " + dm.getDatabaseProductName());
 //				System.out.println("Product version: " + dm.getDatabaseProductVersion() + "]]");
-			}
-
-		} catch (Exception exc) {
-			exc.printStackTrace();
 		}
+		
+		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 
 		return conn;
 	}

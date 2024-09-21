@@ -24,4 +24,9 @@ public class UserServiceImpl implements IUserService {
 		return userDao.findByUsername(username);
 	}
 
+	public static void main(String[] args) {
+		IUserService user = new UserServiceImpl();
+		
+		System.out.println(user.login("user01", "12345"));
+	}
 }
