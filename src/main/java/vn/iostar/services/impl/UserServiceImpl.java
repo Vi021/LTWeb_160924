@@ -15,6 +15,7 @@ public class UserServiceImpl implements IUserService {
 		if (user != null && password.equals(user.getPassword())) {
 			return user;
 		}
+		
 		return null;
 	}
 

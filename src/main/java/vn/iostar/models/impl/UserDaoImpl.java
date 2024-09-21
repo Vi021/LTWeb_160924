@@ -126,14 +126,17 @@ String query = "SELECT * FROM [USERS] WHERE id = ?";
 	}
 
 	public static void main(String[] args) {
-		UserDaoImpl userDao = new UserDaoImpl();
+		IUserDao userDao = new UserDaoImpl();
 		List<UserModel> lst = userDao.findAll();
 
-		// userDao.insert(new UserModel(-1, "user03", "user3@yahoo", "0738793343",
-		// "12345", "SRL-X1726", null, 3, null));
+//		userDao.insert(new UserModel(-1, "user03", "user3@yahoo", "0738793343",
+//		"12345", "SRL-X1726", null, 3, null));
 
-		for (UserModel user : lst) {
-			System.out.println(user);
-		}
+//		for (UserModel user : lst) {
+//			System.out.println(user);
+//		}
+		
+//		System.out.println(userDao.findById(3));
+//		System.out.println(userDao.findByUsername("adm"));
 	}
 }
