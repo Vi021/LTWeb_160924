@@ -21,10 +21,12 @@ public class SQLServerDBConnector {
 		if (!instance.isEmpty()) {
 			connStr += ";instanceName=" + instance;
 		}
+		
+		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");		// <- IMPORTANT, DO TAKE NOTE WHERE TO PLACE IT
 
 		// Get the connection
 		conn = DriverManager.getConnection(connStr, username, password);
-
+		
 		// Check if connection is successful
 		if (conn != null) {
 //				DatabaseMetaData dm = (DatabaseMetaData) conn.getMetaData();
@@ -33,8 +35,6 @@ public class SQLServerDBConnector {
 //				System.out.println("Product name: " + dm.getDatabaseProductName());
 //				System.out.println("Product version: " + dm.getDatabaseProductVersion() + "]]");
 		}
-		
-		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 
 		return conn;
 	}

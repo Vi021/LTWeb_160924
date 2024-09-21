@@ -11,8 +11,11 @@ public class UserServiceImpl implements IUserService {
 	@Override
 	public UserModel login(String username, String password) {
 		UserModel user = this.findByUsername(username);
-
+		
+		System.out.println(username+" "+password);
+			
 		if (user != null && password.equals(user.getPassword())) {
+			
 			return user;
 		}
 		
