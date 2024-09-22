@@ -68,7 +68,6 @@ public class LoginController extends HttpServlet {
 			resp.sendRedirect(req.getContextPath() + "/waiting");
 
 		} else {
-			alertMsg = "Tài khoản hoặc mật khẩu không đúng:" + username + "/-/" + password + "/-/" + user;
 			req.setAttribute("alert", alertMsg);
 			req.getRequestDispatcher("/views/web/login.jsp").forward(req, resp);
 		}

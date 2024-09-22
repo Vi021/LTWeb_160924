@@ -43,8 +43,6 @@ public class UserDaoImpl extends SQLServerDBConnector implements IUserDao {
 	@Override
 	public UserModel findByUsername(String username) {
 		String query = "SELECT * FROM [USERS] WHERE username = ?";
-
-		System.out.println("/"+username);
 		
 		try {
 			conn = new SQLServerDBConnector().getDBConnection();
@@ -53,7 +51,6 @@ public class UserDaoImpl extends SQLServerDBConnector implements IUserDao {
 			rs = ps.executeQuery();
 
 			while (rs.next()) {
-				System.out.println("++");
 				UserModel user = new UserModel();
 				user.setId(rs.getInt("id"));
 				user.setUsername(rs.getString("username"));
