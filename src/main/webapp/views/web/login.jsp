@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="jakarta.tags.core"%>
-<%@ taglib prefix="fmt" uri="jakarta.tags.fmt"%>
-<%@ taglib prefix="fn" uri="jakarta.tags.functions"%>
+<%@ include file="/commons/taglib.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,80 +8,7 @@
 <meta charset="UTF-8">
 <title>Login</title>
 
-<style>
-
-/* Bordered form */
-form {
-	border: 3px solid #f1f1f1;
-}
-
-/* Full-width inputs */
-input[type=text], input[type=password] {
-	width: 100%;
-	padding: 12px 20px;
-	margin: 8px 0;
-	display: inline-block;
-	border: 1px solid #ccc;
-	box-sizing: border-box;
-}
-
-/* Set a style for all buttons */
-button {
-	background-color: #04AA6D;
-	color: white;
-	padding: 14px 20px;
-	margin: 8px 0;
-	border: none;
-	cursor: pointer;
-	width: 100%;
-}
-
-/* Add a hover effect for buttons */
-button:hover {
-	opacity: 0.8;
-}
-
-/* Extra style for the cancel button (red) */
-.cancelbtn {
-	width: auto;
-	padding: 10px 18px;
-	background-color: #f44336;
-}
-
-/* Center the avatar image inside this container */
-.imgcontainer {
-	text-align: center;
-	margin: 24px 0 12px 0;
-}
-
-/* Avatar image */
-img.avatar {
-	width: 40%;
-	border-radius: 50%;
-}
-
-/* Add padding to containers */
-.container {
-	padding: 16px;
-}
-
-/* The "Forgot password" text */
-span.psw {
-	float: right;
-	padding-top: 16px;
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-	span.psw {
-		display: block;
-		float: none;
-	}
-	.cancelbtn {
-		width: 100%;
-	}
-}
-</style>
+	<link rel="stylesheet" type="text/css" href="css/login.css">
 
 </head>
 
@@ -94,9 +19,9 @@ span.psw {
 		<c:if test="${alert !=null}">
 			<h3 class="alert alert danger">${alert}</h3>
 		</c:if>
-
+	
 		<div class="imgcontainer">
-			<img src="displayImage?imageName=img_avatar2.png" alt="Avatar" class="avatar">
+			<img src="#" alt="Avatar" class="avatar">
 		</div>
 
 		<div class="container">
@@ -120,7 +45,7 @@ span.psw {
 		<div class="container" style="background-color: #f1f1f1">
 			<!-- <button type="button" class="cancelbtn">Cancel</button> -->
 			 <span style="display: flex; justify-content: center;"> 
-			 Or <a href="/ltweb_150924/register" style="padding: 0 5px;">SIGN UP</a>a new account 
+			 Or <a href="/ltweb_150924/register" style="padding: 0 5px;">SIGN UP</a>a new account! 
 			 </span>
 			 
 		</div>

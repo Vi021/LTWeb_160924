@@ -1,4 +1,4 @@
-package vn.iostar.controllers.admin;
+package vn.iostar.controllers;
 
 import java.io.IOException;
 
@@ -8,12 +8,12 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = {"/admin/home"})
-public class HomeController extends HttpServlet{
+@WebServlet(urlPatterns = {"/profile"})
+public class ProfileController extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher("/views/admin/home.jsp").forward(req, resp);
+		req.getRequestDispatcher("/views/web/profile.jsp").forward(req, resp);
 	}
 }
