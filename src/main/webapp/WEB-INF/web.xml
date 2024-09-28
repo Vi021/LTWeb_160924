@@ -25,4 +25,11 @@
 	<!-- SITEMESH filter -->
 
 
+	<!-- SESSION -->
+	<!-- nếu sau "local.../home" có dãy session dài-->
+	<session-config>
+		<tracking-mode>COOKIE</tracking-mode>
+	</session-config>
+	<!-- SESSION -->
+
 </web-app>
