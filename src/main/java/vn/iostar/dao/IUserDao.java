@@ -1,6 +1,8 @@
-package vn.iostar.models;
+package vn.iostar.dao;
 
 import java.util.List;
+
+import vn.iostar.models.UserModel;
 
 public interface IUserDao {
 	

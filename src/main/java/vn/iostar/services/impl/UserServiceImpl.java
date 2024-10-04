@@ -1,8 +1,8 @@
 package vn.iostar.services.impl;
 
-import vn.iostar.models.IUserDao;
+import vn.iostar.dao.IUserDao;
+import vn.iostar.dao.impl.UserDaoImpl;
 import vn.iostar.models.UserModel;
-import vn.iostar.models.impl.UserDaoImpl;
 import vn.iostar.services.IUserService;
 
 public class UserServiceImpl implements IUserService {

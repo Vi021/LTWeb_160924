@@ -1,4 +1,4 @@
-package vn.iostar.models.impl;
+package vn.iostar.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import vn.iostar.configs.SQLServerDBConnector;
-import vn.iostar.models.IUserDao;
+import vn.iostar.dao.IUserDao;
 import vn.iostar.models.UserModel;
 
 public class UserDaoImpl extends SQLServerDBConnector implements IUserDao {
