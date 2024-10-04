@@ -22,7 +22,7 @@
                     <div class="form-group">
                       <label for="password" class="col-lg-4 control-label">Password <span class="require">*</span></label>
                       <div class="col-lg-8">
-                        <input type="text" class="form-control" id="password" name="password" placeholder="Enter Password" required>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required>
                       </div>
                     </div>
 					<div class="row">
