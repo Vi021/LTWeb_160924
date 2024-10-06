@@ -43,7 +43,7 @@ onclick="location.href='${pageContext.request.contextPath}/admin/category/add'">
  			</td>
 			<td>
 			<a href="<c:url value='/admin/category/edit?id=${cate.categoryid}'/>">Edit</a>
-			 | <a href="<c:url value='/admin/category/delete?id=${cate.categoryname}'/>">Delete</a>
+			 | <a href="<c:url value='/admin/category/delete?id=${cate.categoryid}'/>">Delete</a>
 			</td>
  		</tr>
  	</c:forEach>
