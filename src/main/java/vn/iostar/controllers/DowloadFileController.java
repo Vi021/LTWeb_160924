@@ -19,7 +19,7 @@ public class DowloadFileController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String filename = req.getParameter("filename");
-		File file = new File(Constants.DIR + "/" + filename);
+		File file = new File(Constants.UPLOAD_DIRECTORY + "/" + filename);
 		
 		resp.setContentType("image/jpeg");
 		if(file.exists()) {
