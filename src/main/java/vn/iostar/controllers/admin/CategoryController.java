@@ -61,12 +61,9 @@ public class CategoryController extends HttpServlet {
 		resp.setCharacterEncoding("UTF-8");
 
 		String url = req.getRequestURI();
-		if (url.contains("insert")) {
+		if (url.contains("/admin/category/insert")) {
 			String categoryname = req.getParameter("catename");
 			int status = Integer.parseInt(req.getParameter("status"));
-//			String image = req.getParameter("cateimg");
-//
-//			catService.insert(new CategoryModel(categoryname.trim(), image, status));
 
 			CategoryModel category = new CategoryModel();
 			category.setCategoryname(categoryname);
@@ -103,7 +100,7 @@ public class CategoryController extends HttpServlet {
 			catService.insert(category);
 			
 			resp.sendRedirect(req.getContextPath() + "/admin/categories");
-		} else if (url.contains("update")) {
+		} else if (url.contains("/admin/category/update")) {
 			int id = Integer.parseInt(req.getParameter("cateid"));
 			String categoryname = req.getParameter("catename");
 			int status = Integer.parseInt(req.getParameter("status"));
