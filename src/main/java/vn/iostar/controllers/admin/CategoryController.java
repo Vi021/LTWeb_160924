@@ -69,8 +69,7 @@ public class CategoryController extends HttpServlet {
 			category.setCategoryname(categoryname);
 			category.setStatus(status);
 
-			String fname = "";
-
+			String filename = "";
 			File uploadDir = new File(Constants.UPLOAD_DIRECTORY);
 			if (!uploadDir.exists()) {
 				uploadDir.mkdir();
@@ -78,20 +77,20 @@ public class CategoryController extends HttpServlet {
 			try {
 				Part part = req.getPart("cateimg");	// #
 				if (part != null && part.getSize() > 0) {
-					String filename2 = Paths.get(part.getSubmittedFileName()).getFileName().toString();
+					String fname = Paths.get(part.getSubmittedFileName()).getFileName().toString();
 
 					// doi ten file
-					int index = filename2.lastIndexOf(".");
-					String ext = filename2.substring(index + 1);
-					fname = System.currentTimeMillis() + "." + ext;
+					int index = fname.lastIndexOf(".");
+					String ext = fname.substring(index + 1);
+					filename = System.currentTimeMillis() + "." + ext;
 
 					// upload file
-					part.write(Constants.UPLOAD_DIRECTORY + "/" + fname);
+					part.write(Constants.UPLOAD_DIRECTORY + "/" + filename);
 					
 					//ghi ten file vao data
-					category.setImages(fname);
+					category.setImages(filename);
 				} else {
-					category.setImages("sunglass_sunflower.jpg");
+					category.setImages("sunglasses_sunflower.jpg");
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -104,11 +103,46 @@ public class CategoryController extends HttpServlet {
 			int id = Integer.parseInt(req.getParameter("cateid"));
 			String categoryname = req.getParameter("catename");
 			int status = Integer.parseInt(req.getParameter("status"));
-			String image = req.getParameter("cateimglink"); // TODO: xu ly khi khong them file thi ko doi anh,
-															// category-edit.jsp
-			// TASK: upload file? jakarta
+//			String image = req.getParameter("cateimglink"); // TODO: xu ly khi khong them file thi ko doi anh, category-edit.jsp
+			
+			CategoryModel category = new CategoryModel();
+			category.setCategoryid(id);
+			category.setCategoryname(categoryname);
+			category.setStatus(status);
+			
+			//luu anh cu
+			CategoryModel catold = catService.findByID(id);
+			String imgold = catold.getImages();
+			
+			//xu ly image
+			String filename = "";
 
-			catService.update(new CategoryModel(id, categoryname.trim(), image, status));
+			File uploadDir = new File(Constants.UPLOAD_DIRECTORY);
+			if (!uploadDir.exists()) {
+				uploadDir.mkdir();
+			}
+			try {
+				Part part = req.getPart("cateimgfile");	// #
+				if (part != null && part.getSize() > 0) {
+					String fname = Paths.get(part.getSubmittedFileName()).getFileName().toString();
+
+					// doi ten file
+					int index = fname.lastIndexOf(".");
+					String ext = fname.substring(index + 1);
+					filename = System.currentTimeMillis() + "." + ext;
+
+					// upload file
+					part.write(Constants.UPLOAD_DIRECTORY + "/" + filename);
+					
+					//ghi ten file vao data
+					category.setImages(filename);
+				} else {
+					category.setImages(imgold);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			catService.update(category);
 
 			resp.sendRedirect(req.getContextPath() + "/admin/categories");
 		}

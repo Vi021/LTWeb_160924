@@ -4,7 +4,7 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <form action="${pageContext.request.contextPath}/admin/category/update"
-	method="post">
+	method="post" enctype="multipart/form-data">
 	<div>
 		<label for="cateid">Category ID</label><br>
 		<input type="text" id="cateid" name="cateid" value="${cat.categoryid}" readonly>
@@ -12,7 +12,7 @@
 		<label for="catename">Category Name</label><br>
 		<input type="text" id="catename" name="catename" value="${cat.categoryname}">
 		<br><br>
-		<label for="cateimg">Image</label><br>
+		<label for="cateimgfile">Image</label><br>
 			<c:choose>
 				<c:when test="${cat.images.contains('http')}">
 					<img height="150" width="200" src="${cat.images}"
@@ -25,7 +25,7 @@
 				</c:otherwise>
 			</c:choose><br>
 		<input type="file" id="cateimgfile" name="cateimgfile"><br>
-		<input type="text" id="cateimglink" name="cateimglink" value="${cat.images}">
+		<input type="text" id="cateimglink" name="cateimglink" value="${cat.images}" readonly>
 		<br><br>
 		<label for="status">Status</label><br>
 		<input type="text" id="status" name="status" value="${cat.status}">
