@@ -2,13 +2,13 @@
 	pageEncoding="UTF-8"%>
 
 <form action="${pageContext.request.contextPath}/admin/category/insert"
-	method="post">
+	method="post" enctype="multipart/form-data">
 	<div>
 		<label for="catename">Category Name</label><br>
 		<input type="text" id="catename" name="catename">
 		<br><br>
 		<label for="cateimg">Image</label><br>
-		<input type="file" id="cateimg" name="img">
+		<input type="file" id="cateimg" name="cateimg">
 		<br><br>
 		<label for="status">Status</label><br>
 		<input type="text" id="status" name="status">
