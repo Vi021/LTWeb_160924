@@ -14,7 +14,7 @@
 					</c:if>
 
 					<div class="form-group">
-                      <label for="email" class="col-lg-4 control-label">Username <span class="require">*</span></label>
+                      <label for="username" class="col-lg-4 control-label">Username <span class="require">*</span></label>
                       <div class="col-lg-8">
                         <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" required>
                       </div>
@@ -32,7 +32,7 @@
 								<span style="display: flex; align-items: center;"> <input
 									type="checkbox" id="rmbr" checked="checked" name="remember">
 									<span style="margin-left: 5px;">Remember me</span>
-								</span> <a href="${pageContext.request.contextPath}forgotpswd">Forgot password?</a>
+								</span> <a href="${pageContext.request.contextPath}/forgotpswd">Forgot password?</a>
 							</label>
 						</div>
                     </div>
