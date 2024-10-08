@@ -24,8 +24,8 @@
 						alt="Image not found" id="catImg" />
 				</c:otherwise>
 			</c:choose><br>
-		<input type="file" id="cateimgfile" name="cateimgfile"><br>
-		<input type="text" id="cateimglink" name="cateimglink" value="${cat.images}" readonly>
+		<input type="file" onchange="chooseFile(this)" id="cateimgfile" name="cateimgfile"><br>
+<%-- 		<input type="text" id="cateimglink" name="cateimglink" value="${cat.images}" readonly> --%>
 		<br><br>
 		<label for="status">Status</label><br>
 		<input type="text" id="status" name="status" value="${cat.status}">

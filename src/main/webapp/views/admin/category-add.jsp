@@ -8,7 +8,8 @@
 		<input type="text" id="catename" name="catename">
 		<br><br>
 		<label for="cateimg">Image</label><br>
-		<input type="file" id="cateimg" name="cateimg">
+		<img alt="No image to show" src="" height="150" width="200" id="catImg"><br>
+		<input type="file" onchange="chooseFile(this)" id="cateimgfile" name="cateimg">
 		<br><br>
 		<label for="status">Status</label><br>
 		<input type="text" id="status" name="status">
