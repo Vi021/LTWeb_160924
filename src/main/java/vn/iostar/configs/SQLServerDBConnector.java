@@ -5,11 +5,11 @@ import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 
 public class SQLServerDBConnector {
-	private final String serverName = "TTFE11\\SQLEXPRESS";
+	private final String serverName = "localhost";
 	private final String dbName = "WEPR_DefaultDB";
 	private final String portnumber = "49172";
 	private final String instance = ""; // empty if there is only one instance of SQL Server
-	private final String username = "Vix";
+	private final String username = "guess";
 	private final String password = "12345";
 
 	public Connection getDBConnection() throws Exception {
