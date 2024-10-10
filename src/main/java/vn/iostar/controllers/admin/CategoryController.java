@@ -103,7 +103,6 @@ public class CategoryController extends HttpServlet {
 			int id = Integer.parseInt(req.getParameter("cateid"));
 			String categoryname = req.getParameter("catename");
 			int status = Integer.parseInt(req.getParameter("status"));
-//			String image = req.getParameter("cateimglink"); // TODO: xu ly khi khong them file thi ko doi anh, category-edit.jsp
 			
 			CategoryModel category = new CategoryModel();
 			category.setCategoryid(id);
